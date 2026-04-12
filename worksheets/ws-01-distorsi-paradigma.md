@@ -53,25 +53,25 @@ Mata kuliah ini menggunakan pendekatan **Positivist** (fenomena TI bisa diukur o
 ## Template A.1 — Research Mindset Self-Assessment
 
 ```
-Nama Peneliti    : ____________________
-Tanggal          : ____________________
+Nama Peneliti    : Wahyu Septiyan
+Tanggal          : 12 April 2026
 
 1. Ketika membaca klaim "metode X 95% akurat":
-   - Pertanyaan pertama saya: ____________________
-   - Data yang dibutuhkan untuk verifikasi: ____________________
+   - Pertanyaan pertama saya: Bagaimana metode pengujian dilakukan dan berapa jumlah data yang digunakan untuk menghasilkan tingkat akurasi tersebut?
+   - Data yang dibutuhkan untuk verifikasi: Dataset yang digunakan, metode pengujian, jumlah sampel, serta hasil evaluasi seperti confusion matrix atau hasil pengujian performa.
 
 2. Posisi paradigma:
-   - Pendekatan: [ ] Positivis  [ ] Interpretivis  [ ] Design Science  [ ] Mixed
-   - Alasan: ____________________
+   - Pendekatan: [ ini ] Positivis  [ ] Interpretivis  [ ] Design Science  [ ] Mixed
+   - Alasan: Karena penelitian menggunakan data kuantitatif dan pengujian eksperimen untuk mengukur performa sistem secara objektif.
 
 3. Identifikasi distorsi:
-   - Asumsi tersembunyi: ____________________
-   - Sumber bias potensial: ____________________
-   - Langkah mitigasi: ____________________
+   - Asumsi tersembunyi: Data yang digunakan dalam penelitian dianggap sudah mewakili kondisi sebenarnya.
+   - Sumber bias potensial: Pemilihan dataset yang terbatas atau kondisi pengujian yang tidak mewakili situasi nyata.
+   - Langkah mitigasi: Melakukan pengujian berulang, menggunakan dataset yang lebih beragam, dan melaporkan metode penelitian secara transparan.
 
 4. Komitmen etika:
-   - Data yang tidak akan dimanipulasi: ____________________
-   - Batasan yang diakui sejak awal: ____________________
+   - Data yang tidak akan dimanipulasi: Data hasil pengujian eksperimen dan hasil analisis performa sistem.
+   - Batasan yang diakui sejak awal: Keterbatasan jumlah data, kondisi lingkungan pengujian, serta kemungkinan adanya faktor eksternal yang mempengaruhi hasil penelitian.
 ```
 
 ---
