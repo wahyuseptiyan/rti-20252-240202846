@@ -87,16 +87,18 @@ Pilih satu paper riset di bidang TI yang mengklaim "metode X meningkatkan perfor
 | Tahap | Apa yang Dilakukan | Potensi Distorsi |
 |-------|-------------------|-----------------|
 | Reality → Data | Mengakses website sistem informasi akademik unpam.ac.id pada Linux Ubuntu 22.04 dan mengumpulkan data performa menggunakan tools htop, vmstat, curl, dan GTmetrix | Pengujian hanya dilakukan pada kondisi jaringan tertentu sehingga hasil mungkin tidak mewakili semua kondisi akses |
-| Data → Processing | | |
-| Processing → Analysis | | |
-| Analysis → Inference | | |
-| Inference → Knowledge | | |
+| Data → Processing | Data dari pengujian seperti jumlah proses aktif, penggunaan memori, CPU usage, dan waktu respon dikumpulkan lalu dihitung rata-rata dari tiga kali pengujian| Pengulangan pengujian hanya 3 kali, sehingga kemungkinan variasi performa belum sepenuhnya terwakili |
+| Processing → Analysis | Data yang sudah dirata-ratakan dianalisis untuk melihat kinerja CPU, manajemen memori, waktu akses website, dan performa sistem secara keseluruhan | Analisis hanya fokus pada sistem operasi Linux, tanpa perbandingan langsung dengan sistem operasi lain |
+| Analysis → Inference | Peneliti menyimpulkan bahwa Linux mampu mengelola proses dan memori secara efisien, tetapi performa website masih kurang optimal | Kesimpulan bisa dipengaruhi oleh kondisi server website atau jaringan saat pengujian |
+| Inference → Knowledge | Hasil penelitian dijadikan referensi untuk meningkatkan performa sistem informasi akademik, seperti menggunakan CDN, kompresi file, dan HTTP/2 | Rekomendasi mungkin tidak berlaku untuk semua website karena konfigurasi sistem yang berbeda |
 
-**Distorsi paling besar di tahap:** ________________________
+**Distorsi paling besar di tahap:** **Data → Processing**
+
+Karena jumlah pengujian hanya tiga kali, sehingga kemungkinan variasi performa sistem belum sepenuhnya terwakili.
 
 **Dua distorsi spesifik yang teridentifikasi:**
-1. ___________________________________________________
-2. ___________________________________________________
+1. Jumlah pengujian terbatas (3 kali) sehingga data mungkin belum cukup merepresentasikan kondisi sebenarnya.
+2. Pengujian dilakukan pada satu sistem operasi (Linux Ubuntu) tanpa perbandingan langsung dengan sistem operasi lain seperti Windows atau macOS.
 
 ---
 
