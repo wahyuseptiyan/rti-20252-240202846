@@ -108,27 +108,27 @@ Skenario: Seorang peneliti menemukan bahwa jika 3 data point outlier dihapus, ha
 
 | Perspektif | Analisis |
 |------------|---------|
-| Kejujuran ilmiah | *Contoh: Laporkan kedua versi (dengan dan tanpa outlier)* |
-| Transparansi | |
-| Peer review | |
+| Kejujuran ilmiah | Peneliti harus melaporkan hasil penelitian secara jujur dengan menampilkan dua versi analisis, yaitu data dengan outlier dan tanpa outlier, serta menjelaskan alasan penghapusan data tersebut. |
+| Transparansi | Peneliti harus menjelaskan secara terbuka metode pengolahan data, termasuk alasan mengapa data outlier dianggap tidak representatif atau perlu dihapus. |
+| Peer review | Proses peer review memungkinkan peneliti lain mengevaluasi apakah penghapusan outlier valid secara metodologis atau justru merupakan manipulasi data. |
 
 **Keputusan akhir dan justifikasi:**
-> ___________________________________________________
+> Peneliti sebaiknya tidak langsung menghapus outlier tanpa penjelasan, tetapi harus melaporkan kedua hasil analisis. Hal ini penting untuk menjaga integritas penelitian, transparansi data, dan kepercayaan ilmiah, sehingga pembaca atau peneliti lain dapat menilai sendiri validitas hasil penelitian.
 
 ---
 
 ## Latihan 3 — Posisi Paradigma
 
-**Topik riset:** ________________________________________
+**Topik riset:** 
 
 | Kriteria | Positivis | Interpretivis | Design Science |
 |----------|-----------|---------------|----------------|
-| Kesesuaian dengan topik (1–5) | *Contoh: 4* | *Contoh: 2* | *Contoh: 5* |
-| Jenis data yang dikumpulkan | | | |
-| Limitasi paradigma | | | |
+| Kesesuaian dengan topik (1–5) | 5 | 2 | 3 |
+| Jenis data yang dikumpulkan | Data kuantitatif seperti penggunaan CPU, memori, jumlah proses, waktu respon, dan skor performa website | Data kualitatif seperti persepsi pengguna atau pengalaman pengguna terhadap sistem | Data hasil perancangan atau pengembangan sistem serta evaluasi implementasi teknologi |
+| Limitasi paradigma | Kurang menjelaskan faktor sosial atau pengalaman pengguna | Tidak fokus pada pengukuran performa sistem secara teknis | Fokus pada pembuatan artefak atau solusi sistem, bukan pada analisis performa sistem yang sudah ada |
 
-**Paradigma yang dipilih:** _____________________________
-**Alasan:** ____________________________________________
+**Paradigma yang dipilih:** Positivis
+**Alasan:** Karena penelitian menggunakan data kuantitatif dan pengujian eksperimental untuk mengukur performa sistem secara objektif melalui tools seperti htop, vmstat, curl, dan GTmetrix, sehingga pendekatan positivis paling sesuai untuk menganalisis hubungan antara manajemen memori, proses, dan performa website.
 
 ---
 
@@ -137,5 +137,4 @@ Skenario: Seorang peneliti menemukan bahwa jika 3 data point outlier dihapus, ha
 > Sebelum membaca materi ini, apakah pernah mempertanyakan klaim "95% akurat"? Setelah memahami rantai distorsi, pertanyaan apa yang sekarang akan diajukan saat membaca paper?
 
 **Jawaban:**
-> ___________________________________________________
-> ___________________________________________________
+> Sebelum membaca materi ini, saya biasanya menerima klaim seperti “95% akurat” tanpa terlalu mempertanyakan bagaimana angka tersebut diperoleh. Setelah memahami konsep rantai distorsi dalam penelitian, saya menyadari bahwa hasil penelitian dapat dipengaruhi oleh berbagai faktor seperti cara pengumpulan data, proses pengolahan data, metode analisis, dan interpretasi hasil. Oleh karena itu, saat membaca sebuah paper saya akan lebih kritis dengan menanyakan bagaimana data dikumpulkan, apakah terdapat bias atau distorsi dalam proses pengolahan data, apakah metode analisis yang digunakan sudah tepat, serta apakah kesimpulan yang diambil benar-benar didukung oleh data penelitian.
