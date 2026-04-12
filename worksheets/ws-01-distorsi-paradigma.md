@@ -81,12 +81,12 @@ Tanggal          : ____________________
 Pilih satu paper riset di bidang TI yang mengklaim "metode X meningkatkan performa." Telusuri setiap tahap Research Trust Model.
 
 **Paper yang dipilih:**
-> Judul: _______________________________________________
-> Penulis (Tahun): ______________________________________
+> Judul: Analisis Performa Sistem Informasi Akademik: Pengaruh Struktur Memori dan Manajemen Proses pada Sistem Operasi Linux Menggunakan Metode Eksperimental Kuantitatif
+> Penulis (Tahun): Muhammad Rafli Ramadhan, Rinna Rachmatika (2025)
 
 | Tahap | Apa yang Dilakukan | Potensi Distorsi |
 |-------|-------------------|-----------------|
-| Reality → Data | *Contoh: Kumpulkan log server 30 hari* | *Contoh: Hanya ambil jam sibuk* |
+| Reality → Data | Mengakses website sistem informasi akademik unpam.ac.id pada Linux Ubuntu 22.04 dan mengumpulkan data performa menggunakan tools htop, vmstat, curl, dan GTmetrix | Pengujian hanya dilakukan pada kondisi jaringan tertentu sehingga hasil mungkin tidak mewakili semua kondisi akses |
 | Data → Processing | | |
 | Processing → Analysis | | |
 | Analysis → Inference | | |
