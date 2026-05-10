@@ -87,16 +87,17 @@ Alignment Check:
 
 Gunakan RQ dari WS-04. Definisikan variabel dan metriknya.
 
-**RQ:** __________________________________________________
+**RQ:** Apakah manajemen proses dan struktur memori Linux Ubuntu 22.04 LTS menghasilkan performa website sistem informasi akademik yang lebih efisien berdasarkan response time, penggunaan CPU/memori, dan GTmetrix performance score?
 
 | Variabel | Tipe | Konsep Abstrak | Metrik Konkret | Skala (NOIR) | Satuan |
 |----------|------|---------------|----------------|-------------|--------|
-| *Contoh: Jenis model* | *IV* | *Pendekatan klasifikasi* | *Categorical: CNN vs RF* | *Nominal* | *—* |
-| | DV | | | | |
-| | CV | | | | |
+|Manajemen proses Linux | IV | Efisiensi sistem operasi | CPU utilization, load average | Ratio | %, angka |
+|Struktur memori Linux | IV |Pengelolaan memori |Memory usage, cache usage |Ratio |GB, KB |
+|Performa website | DV |Kinerja website akademik |Response time, GTmetrix score, LCP |Ratio |Detik, % |
+|Lingkungan pengujian|CV|Stabilitas eksperimen|RAM, CPU core, bandwidth|Ratio|GB, Core, Mbps|
 
-**Apakah ada lompatan logis dalam rantai?** [ ] Ya / [ ] Tidak
-> Jika ya, di mana? ____________________________________
+**Apakah ada lompatan logis dalam rantai?** [ ] Ya / [tidak ] Tidak
+> Jika ya, di mana? Tidak ada karena semua konsep abstrak telah diterjemahkan menjadi metrik yang dapat diukur secara langsung.
 
 ---
 
@@ -106,15 +107,15 @@ Evaluasi metrik DV yang dipilih di Latihan 1 menggunakan 3 kriteria.
 
 | Kriteria | Skor (1-5) | Justifikasi |
 |----------|-----------|-------------|
-| Representative | *Contoh: 4 — F1-Score mewakili keseimbangan precision-recall* | |
-| Sensitive | | |
-| Feasible | | |
+| Representative | 5|Response time dan GTmetrix score secara langsung merepresentasikan performa website |
+| Sensitive |4 | Perubahan kecil pada server dan jaringan dapat memengaruhi nilai metrik|
+| Feasible |5 |Data mudah dikumpulkan menggunakan tools standar Linux dan GTmetrix |
 
-**Apakah perlu secondary metric?** [ ] Ya / [ ] Tidak
-> Jika ya, apa dan mengapa? _____________________________
+**Apakah perlu secondary metric?** [ya ] Ya / [ ] Tidak
+> Jika ya, apa dan mengapa? Largest Contentful Paint (LCP) dan CPU utilization digunakan sebagai secondary metric karena membantu menjelaskan penyebab perubahan performa website secara lebih detail.
 
 **Contoh kasus ceiling effect untuk metrik ini:**
-> ___________________________________________________
+> ika semua website memiliki GTmetrix score sangat tinggi (misalnya 98–100%), maka metrik menjadi kurang sensitif untuk membedakan performa antar sistem.
 
 ---
 
@@ -124,10 +125,10 @@ Bayangkan data yang akan dikumpulkan dari eksperimen. Evaluasi 4 dimensi kualita
 
 | Dimensi | Pertanyaan | Jawaban | Strategi Mitigasi |
 |---------|-----------|---------|------------------|
-| Completeness | *Apakah semua data point terkumpul?* | | |
-| Consistency | *Apakah ada kontradiksi internal?* | | |
-| Validity | *Apakah benar-benar mengukur yang dimaksud?* | | |
-| Representativeness | *Apakah sampel mewakili populasi target?* | | |
+| Completeness | Apakah semua data point terkumpul? | Ada kemungkinan data hilang saat jaringan tidak stabil|Melakukan pengujian berulang minimal 3 kali |
+| Consistency | Apakah ada kontradiksi internal?| Bisa terjadi perbedaan hasil antar tools|Menggunakan tools yang sama pada setiap pengujian |
+| Validity | Apakah benar-benar mengukur yang dimaksud? | Ya, metrik langsung mengukur performa sistem|Menggunakan metrik standar industri seperti GTmetrix |
+| Representativeness | Apakah sampel mewakili populasi target? |Masih terbatas pada satu website akademik |Menambah variasi website akademik pada penelitian lanjutan |
 
 ---
 
@@ -136,5 +137,6 @@ Bayangkan data yang akan dikumpulkan dari eksperimen. Evaluasi 4 dimensi kualita
 > Mengapa memilih metrik setelah melihat data dianggap p-hacking? Apa bedanya dengan eksplorasi data yang sah?
 
 **Jawaban:**
-> ___________________________________________________
-> ___________________________________________________
+> Memilih metrik setelah melihat data dianggap p-hacking karena peneliti dapat memilih metrik yang paling menguntungkan hasil penelitian sehingga meningkatkan risiko bias dan kesimpulan yang tidak valid.
+
+> Berbeda dengan eksplorasi data yang sah, eksplorasi dilakukan untuk menemukan pola tambahan setelah analisis utama selesai. Hasil eksplorasi tetap dilaporkan sebagai exploratory findings, bukan sebagai bukti utama untuk menerima atau menolak hipotesis.
