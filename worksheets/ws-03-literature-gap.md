@@ -113,8 +113,9 @@ Gunakan topik riset dari WS-02. Cari minimal 5 paper relevan menggunakan Google 
 |4|Tengriano et al.|2022|GTmetrix dan PageSpeed Insights|Website AyoMulai|Grade B dengan performa 77%|Tidak membahas manajemen memori dan CPU|
 |5|Yunianto & Adhiyarta|2021|Perbandingan performa OS|Linux vs Windows|Linux lebih efisien dalam penggunaan memori|Tidak fokus pada sistem informasi akademik|
 
-**Pola yang terlihat — Metode dominan:** ___________________
-**Limitasi yang berulang:** ______________________________
+**Pola yang terlihat — Metode dominan:** 
+Pengujian performa website menggunakan GTmetrix dan monitoring resource Linux.
+**Limitasi yang berulang:** Sebagian besar penelitian hanya fokus pada performa eksternal website dan belum menghubungkan performa dengan manajemen memori serta proses sistem operasi Linux.
 
 ---
 
@@ -124,14 +125,14 @@ Berdasarkan tabel di Latihan 1, identifikasi gap.
 
 | Jenis Gap | Ditemukan? | Gap Statement |
 |-----------|-----------|---------------|
-| Performance Gap | [ ] Ya / [ ] Tidak | *Contoh: Akurasi turun di bawah 80% untuk kelas minoritas* |
-| Method Gap | [ ] Ya / [ ] Tidak | |
-| Data Gap | [ ] Ya / [ ] Tidak | |
-| Context Gap | [ ] Ya / [ ] Tidak | |
+| Performance Gap | [Ya ] Ya / [ ] Tidak | Banyak website akademik masih memiliki skor performa rendah (grade D/E) dan waktu loading tinggi|
+| Method Gap | [Ya ] Ya / [ ] Tidak |Sebagian penelitian hanya menggunakan GTmetrix tanpa analisis internal sistem operasi Linux |
+| Data Gap | [Ya ] Ya / [ ] Tidak |Dataset penelitian terbatas pada satu website dan sedikit variasi lingkungan sistem |
+| Context Gap | [ Ya] Ya / [ ] Tidak |Belum banyak penelitian pada sistem informasi akademik berbasis Linux di lingkungan perguruan tinggi Indonesia |
 
-**Gap utama yang dipilih:** _____________________________
+**Gap utama yang dipilih:** Method Gap dan Context Gap
 **Mengapa gap ini penting (bukan sekadar "belum ada yang meneliti")?**
-> ___________________________________________________
+> Karena performa website tidak hanya dipengaruhi oleh tampilan front-end, tetapi juga oleh manajemen proses dan memori pada sistem operasi Linux. Sebagian besar penelitian sebelumnya hanya mengukur performa dari sisi eksternal tanpa melihat hubungan langsung dengan resource sistem operasi, sehingga analisis performa belum menyeluruh.
 
 ---
 
@@ -141,11 +142,11 @@ Pilih 2 baseline dari literatur yang sudah dibaca.
 
 | # | Baseline | Mengapa Relevan | Mengapa Representatif | Apakah SOTA? | Sumber |
 |---|----------|----------------|----------------------|-------------|--------|
-| 1 | *Contoh: RF + TF-IDF* | *Task sama: klasifikasi teks* | *Dipakai 6 dari 10 paper* | *Bukan, tapi common practice* | *Lee et al., 2022* |
-| 2 | | | | | |
+| 1 | GTmetrix Performance Testing | Sama-sama mengukur performa website | Banyak digunakan dalam penelitian website | Bukan SOTA penuh, tetapi common practice | Arni et al., 2023 |
+| 2 |GTmetrix + PageSpeed Insights |Sama-sama mengevaluasi kecepatan dan efisiensi web |Digunakan luas untuk analisis web modern |Ya, termasuk tools populer terbaru |Tengriano et al., 2022 |
 
-**Apakah pemilihan baseline ini bisa dianggap straw man?** [ ] Ya / [ ] Tidak
-> Justifikasi: ________________________________________
+**Apakah pemilihan baseline ini bisa dianggap straw man?** [ ] Ya / [Tidak] Tidak
+> Justifikasi: Karena baseline yang dipilih merupakan tools yang umum digunakan dalam penelitian performa website dan relevan dengan topik penelitian. Baseline tidak dipilih secara sengaja untuk terlihat lemah, melainkan representatif terhadap praktik umum pada penelitian sebelumnya.
 
 ---
 
@@ -154,5 +155,6 @@ Pilih 2 baseline dari literatur yang sudah dibaca.
 > Apa perbedaan antara "belum ada yang meneliti ini" (klaim tanpa bukti) dengan research gap yang valid? Bagaimana cara membuktikan bahwa sebuah gap benar-benar ada?
 
 **Jawaban:**
-> ___________________________________________________
-> ___________________________________________________
+> Pernyataan “belum ada yang meneliti ini” hanya merupakan klaim umum tanpa bukti pencarian literatur yang jelas. Sedangkan research gap yang valid harus didukung oleh hasil analisis dari beberapa penelitian sebelumnya sehingga terlihat kekurangan, keterbatasan, atau masalah yang belum terjawab.
+
+Cara membuktikan adanya gap adalah dengan melakukan systematic literature search menggunakan database seperti Google Scholar, IEEE Xplore, atau Scopus, kemudian membandingkan metode, hasil, dan limitasi dari penelitian terdahulu. Dari sana dapat ditemukan pola kekurangan, kontradiksi, atau konteks yang belum diteliti secara mendalam.
