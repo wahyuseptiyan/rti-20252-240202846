@@ -103,24 +103,23 @@ Hypothesis Pair:
 
 Gunakan gap yang ditemukan di WS-03. Transformasikan menjadi Research Question.
 
-**Gap dari WS-03:** ____________________________________
+**Gap dari WS-03:** Sebagian besar penelitian performa website akademik hanya menggunakan pengujian eksternal seperti GTmetrix tanpa menganalisis hubungan manajemen proses dan struktur memori pada sistem operasi Linux terhadap performa website.
 
 **RQ versi pertama (tulis bebas):**
-> ___________________________________________________
-
+> Bagaimana pengaruh manajemen proses dan struktur memori Linux terhadap performa sistem informasi akademik berbasis web?
 **Evaluasi RQ:**
 
 | Komponen | Ada? | Isi |
 |----------|------|-----|
-| Metode spesifik | *Contoh: Ya — CNN vs RF* | |
-| Metrik terukur | | |
-| Baseline | | |
-| Dataset/konteks | | |
+| Metode spesifik | ya |Monitoring menggunakan htop, vmstat, curl, dan GTmetrix |
+| Metrik terukur | ya |Load average, penggunaan memori, response time, performance score |
+| Baseline | ya |GTmetrix dan monitoring Linux standar |
+| Dataset/konteks | ya |Website sistem informasi akademik berbasis Linux Ubuntu 22.04 |
 
-**Tipe RQ:** [ ] Comparison / [ ] Improvement / [ ] Exploratory
+**Tipe RQ:** [ya ] Comparison / [ ] Improvement / [ ] Exploratory
 
 **RQ versi revisi (setelah evaluasi):**
-> ___________________________________________________
+> Apakah manajemen proses dan struktur memori pada Linux Ubuntu 22.04 LTS menghasilkan performa website sistem informasi akademik yang lebih efisien berdasarkan metrik response time, penggunaan CPU/memori, dan GTmetrix performance score?
 
 ---
 
@@ -130,15 +129,15 @@ Rumuskan pasangan hipotesis dari RQ di Latihan 1.
 
 | Komponen | Isi |
 |----------|-----|
-| H₀ | *Contoh: Tidak ada perbedaan signifikan F1-Score antara CNN dan RF pada dataset CIC-MalMem-2022* |
-| H₁ | |
-| Metrik | |
-| Threshold | |
-| Justifikasi threshold | |
+| H₀ |Tidak ada pengaruh signifikan manajemen proses dan struktur memori Linux Ubuntu 22.04 terhadap performa sistem informasi akademik berbasis web berdasarkan response time, penggunaan CPU/memori, dan GTmetrix score|
+| H₁ |Terdapat pengaruh signifikan manajemen proses dan struktur memori Linux Ubuntu 22.04 terhadap performa sistem informasi akademik berbasis web berdasarkan response time, penggunaan CPU/memori, dan GTmetrix score |
+| Metrik |Response time, CPU utilization, memory usage, GTmetrix performance score |
+| Threshold |p-value < 0.05 |
+| Justifikasi threshold | Nilai 0.05 umum digunakan dalam penelitian kuantitatif untuk menentukan signifikansi statistik|
 
-**Apakah hipotesis ini falsifiable?** [ ] Ya / [ ] Tidak
-> Bagaimana cara membuktikannya salah? ___________________
-
+**Apakah hipotesis ini falsifiable?** [ya ] Ya / [ ] Tidak
+> Bagaimana cara membuktikannya salah? 
+Dengan melakukan pengujian performa dan analisis statistik. Jika hasil pengujian menunjukkan tidak ada perbedaan atau pengaruh signifikan pada metrik performa (p-value ≥ 0.05), maka H₁ ditolak dan H₀ diterima.
 ---
 
 ## Latihan 3 — Rantai Operasionalisasi
@@ -147,15 +146,15 @@ Lengkapi rantai dari RQ hingga metode analisis.
 
 | Tahap | Isi |
 |-------|-----|
-| RQ | *Contoh: Apakah CNN menghasilkan F1-Score lebih tinggi dari RF...* |
-| Variable (IV) | *Contoh: Jenis algoritma (CNN vs RF)* |
-| Variable (DV) | |
-| Metric | |
-| Data source | |
-| Analysis method | |
+| RQ | Apakah manajemen proses dan struktur memori Linux Ubuntu 22.04 LTS menghasilkan performa website sistem informasi akademik yang lebih efisien berdasarkan response time, penggunaan CPU/memori, dan GTmetrix performance score? |
+| Variable (IV) | Manajemen proses dan struktur memori Linux |
+| Variable (DV) |Performa website sistem informasi akademik |
+| Metric |CPU utilization, memory usage, response time, GTmetrix score |
+| Data source |Pengujian website akademik menggunakan htop, vmstat, curl, dan GTmetrix |
+| Analysis method |Analisis kuantitatif dan perbandingan hasil performa |
 
-**Apakah rantai lengkap?** [ ] Ya / [ ] Tidak
-> Jika tidak, tahap mana yang perlu direvisi? ______________
+**Apakah rantai lengkap?** [ya ] Ya / [ ] Tidak
+> Jika tidak, tahap mana yang perlu direvisi?Tidak perlu revisi karena semua komponen sudah saling terhubung.
 
 ---
 
@@ -163,6 +162,6 @@ Lengkapi rantai dari RQ hingga metode analisis.
 
 > Ambil satu judul skripsi/paper yang pernah dibaca. Coba ekstrak RQ-nya. Apakah RQ tersebut memenuhi semua komponen (metode, metrik, baseline, konteks)? Jika tidak, apa yang hilang?
 
-**Judul:** _____________________________________________
-**RQ yang diekstrak:** __________________________________
-**Komponen yang hilang:** _______________________________
+**Judul:** Analisis Performa Sistem Informasi Akademik: Pengaruh Struktur Memori dan Manajemen Proses pada Sistem Operasi Linux Menggunakan Metode Eksperimental Kuantitatif
+**RQ yang diekstrak:** Apakah struktur memori dan manajemen proses Linux berpengaruh terhadap performa sistem informasi akademik berbasis web?
+**Komponen yang hilang:** RQ belum menyebutkan baseline secara eksplisit dan belum mencantumkan threshold atau ukuran keberhasilan performa secara spesifik.
