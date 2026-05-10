@@ -61,20 +61,17 @@ Membandingkan deep learning 2024 dengan decision tree sederhana tanpa justifikas
 ```
 LITERATURE MAPPING
 
-Topik      : Analisis performa sistem informasi akademik berbasis web pada sistem operasi Linux
-Database   : Google Scholar, IEEE Xplore, Scopus
-Query      : ("website performance" OR "web performance") AND ("academic information system" OR "sistem informasi akademik") AND (Linux OR Ubuntu) AND (GTmetrix OR "PageSpeed Insights")
-Tahun      : 2021–2025
-Hasil awal : ±25 paper → Screening → 5 paper final
+Topik      : ____________________
+Database   : ____________________
+Query      : ____________________
+Tahun      : ____________________
+Hasil awal : ____ paper → Screening → ____ paper final
 
 Literature Matrix (concept-centric):
 
 | Study | Tahun | Method | Data | Result | Limitation |
-|Ramadhan & Rachmatika|2025|Eksperimen kuantitatif menggunakan htop, vmstat, curl, GTmetrix|Website unpam.ac.id|Linux stabil dengan 129 proses aktif, GTmetrix score 56% grade D|Hanya menggunakan satu website akademik|
-|     Arni et al.  |    2023   |Analisis performa menggunakan GTmetrix        |  Website organisasi    |Performa website memperoleh grade E dengan performa 54%        |      Tidak menganalisis pengaruh sistem operasi      |
-|Muriyatmoko & Musthafa|2022|Speed testing model|Website jurnal Indonesia|Performa rata-rata website pendidikan 60–70%|Fokus hanya pada performa eksternal|
-|Tengriano et al.|2022|GTmetrix dan PageSpeed Insights|Website AyoMulai|Grade B dengan performa 77%|Tidak membahas manajemen memori dan CPU|
-|Yunianto & Adhiyarta|2021|Perbandingan performa OS|Linux vs Windows|Linux lebih efisien dalam penggunaan memori|Tidak fokus pada sistem informasi akademik|
+|-------|-------|--------|------|--------|------------|
+|       |       |        |      |        |            |
 
 Pola yang ditemukan:
   Metode dominan     : ____________________
@@ -105,17 +102,16 @@ Baseline Selection:
 
 Gunakan topik riset dari WS-02. Cari minimal 5 paper relevan menggunakan Google Scholar atau database lain.
 
-**Topik riset:** ________________________________________
-**Query pencarian:** ____________________________________
-**Database:** ___________________________________________
+**Topik riset:** Analisis performa sistem informasi akademik berbasis web pada sistem operasi Linux
+**Query pencarian:** ("website performance" OR "web performance") AND ("academic information system" OR "sistem informasi akademik") AND (Linux OR Ubuntu) AND (GTmetrix OR "PageSpeed Insights")
+**Database:** Google Scholar, IEEE Xplore, Scopus
 
 | # | Study | Tahun | Method | Dataset | Result | Limitasi |
-|---|-------|-------|--------|---------|--------|----------|
-| 1 | *Contoh: Rahman et al.* | *2023* | *CNN* | *ImageNet subset* | *Acc 91%* | *Hanya 3 kelas* |
-| 2 | | | | | | |
-| 3 | | | | | | |
-| 4 | | | | | | |
-| 5 | | | | | | |
+|Ramadhan & Rachmatika|2025|Eksperimen kuantitatif menggunakan htop, vmstat, curl, GTmetrix|Website unpam.ac.id|Linux stabil dengan 129 proses aktif, GTmetrix score 56% grade D|Hanya menggunakan satu website akademik|
+|     Arni et al.  |    2023   |Analisis performa menggunakan GTmetrix        |  Website organisasi    |Performa website memperoleh grade E dengan performa 54%        |      Tidak menganalisis pengaruh sistem operasi      |
+|Muriyatmoko & Musthafa|2022|Speed testing model|Website jurnal Indonesia|Performa rata-rata website pendidikan 60–70%|Fokus hanya pada performa eksternal|
+|Tengriano et al.|2022|GTmetrix dan PageSpeed Insights|Website AyoMulai|Grade B dengan performa 77%|Tidak membahas manajemen memori dan CPU|
+|Yunianto & Adhiyarta|2021|Perbandingan performa OS|Linux vs Windows|Linux lebih efisien dalam penggunaan memori|Tidak fokus pada sistem informasi akademik|
 
 **Pola yang terlihat — Metode dominan:** ___________________
 **Limitasi yang berulang:** ______________________________
