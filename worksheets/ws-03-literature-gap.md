@@ -107,6 +107,7 @@ Gunakan topik riset dari WS-02. Cari minimal 5 paper relevan menggunakan Google 
 **Database:** Google Scholar, IEEE Xplore, Scopus
 
 | # | Study | Tahun | Method | Dataset | Result | Limitasi |
+|---|----------|----------------|----------------------|-------------|--------|
 |1|Ramadhan & Rachmatika|2025|Eksperimen kuantitatif menggunakan htop, vmstat, curl, GTmetrix|Website unpam.ac.id|Linux stabil dengan 129 proses aktif, GTmetrix score 56% grade D|Hanya menggunakan satu website akademik|
 |2|Arni et al.|2023|Analisis performa menggunakan GTmetrix|  Website organisasi|Performa website memperoleh grade E dengan performa 54%|Tidak menganalisis pengaruh sistem operasi|
 |3|Muriyatmoko & Musthafa|2022|Speed testing model|Website jurnal Indonesia|Performa rata-rata website pendidikan 60–70%|Fokus hanya pada performa eksternal|
