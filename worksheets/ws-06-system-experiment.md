@@ -143,10 +143,9 @@ Jika sistem memiliki 3 komponen utama, rencanakan ablation study.
 ---
 
 ## Refleksi
-
-> Apa risiko jika sistem dibangun seperti produk (monolitik, fitur lengkap) lalu baru dilakukan eksperimen? Mengapa arsitektur modular penting untuk riset?
+Apa risiko jika sistem dibangun seperti produk (monolitik, fitur lengkap) lalu baru dilakukan eksperimen? Mengapa arsitektur modular penting untuk riset?
 
 **Jawaban:**
-> Jika sistem dibangun seperti produk monolitik dengan banyak fitur tambahan, maka eksperimen akan sulit dilakukan karena variabel penelitian bercampur dengan fitur lain yang tidak relevan. Hal ini meningkatkan noise dan menyulitkan peneliti menentukan faktor yang benar-benar memengaruhi hasil penelitian.
+Jika sistem dibangun seperti produk monolitik dengan banyak fitur tambahan, maka eksperimen akan sulit dilakukan karena variabel penelitian bercampur dengan fitur lain yang tidak relevan. Hal ini meningkatkan noise dan menyulitkan peneliti menentukan faktor yang benar-benar memengaruhi hasil penelitian.
 
 Arsitektur modular penting dalam riset karena memungkinkan setiap variabel dipisahkan dan diuji secara independen. Dengan modularitas, peneliti dapat mengubah satu variabel tanpa memengaruhi komponen lain sehingga eksperimen menjadi lebih terkontrol, terukur, dan mudah direproduksi.
