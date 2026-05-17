@@ -94,16 +94,17 @@ Experimental Setup:
 
 Gunakan RQ dan variabel dari WS-05. Petakan ke komponen sistem.
 
-**RQ:** __________________________________________________
+**RQ:** Apakah manajemen proses dan struktur memori Linux Ubuntu 22.04 LTS menghasilkan performa website sistem informasi akademik yang lebih efisien berdasarkan response time, penggunaan CPU/memori, dan GTmetrix performance score?
 
 | Variabel | Tipe | Komponen Sistem | Cara Manipulasi / Pengukuran |
 |----------|------|-----------------|---------------------------|
-| *Contoh: Jenis model* | *IV* | *Modul classifier (swap RF ↔ CNN)* | *Ganti config `model_type`* |
-| | DV | | |
-| | CV | | |
+| Manajemen proses Linux | IV | Modul monitoring proses (htop, vmstat) | Mengamati CPU utilization, load average, proses aktif |
+|Struktur memori Linux | IV |Modul monitoring memori |Mengukur penggunaan RAM, cache, dan virtual memory |
+|Performa website | DV |Modul pengujian performa (curl/time dan GTmetrix) | Mengukur response time, GTmetrix score, LCP|
+|Lingkungan pengujian|CV|Konfigurasi hardware dan jaringan|Menjaga RAM, CPU, bandwidth, dan OS tetap sama|
 
-**Apakah semua variabel bisa di-map?** [ ] Ya / [ ] Tidak
-> Jika tidak, komponen apa yang perlu ditambahkan? _________
+**Apakah semua variabel bisa di-map?** [ ya] Ya / [ ] Tidak
+> Jika tidak, komponen apa yang perlu ditambahkan? Tidak perlu tambahan karena seluruh variabel sudah memiliki komponen sistem yang sesuai.
 
 ---
 
@@ -113,14 +114,14 @@ Evaluasi desain sistem terhadap 4 prinsip.
 
 | Prinsip | Status | Bukti / Penjelasan |
 |---------|--------|-------------------|
-| Traceability | *Contoh: ✅ — setiap modul punya label variabel* | |
-| Modularity | | |
-| Controllability | | |
-| Measurability | | |
+| Traceability | ✅ | Setiap komponen monitoring dan pengujian terhubung langsung dengan variabel penelitian|
+| Modularity |✅ |Pengujian CPU, memori, dan website dilakukan dengan tools terpisah |
+| Controllability | ✅|Konfigurasi sistem, jaringan, dan spesifikasi hardware dijaga tetap |
+| Measurability | ✅| Semua data performa otomatis dihasilkan oleh tools Linux dan GTmetrix|
 
-**Prinsip mana yang paling sulit dipenuhi?** _______________
+**Prinsip mana yang paling sulit dipenuhi?** Controllability
 **Strategi untuk mengatasinya:**
-> ___________________________________________________
+> Menjaga kondisi jaringan, spesifikasi hardware, dan jumlah proses latar belakang tetap stabil selama eksperimen dilakukan.
 
 ---
 
@@ -130,14 +131,14 @@ Jika sistem memiliki 3 komponen utama, rencanakan ablation study.
 
 | Kondisi | Komponen A | Komponen B | Komponen C | Hasil yang Diharapkan |
 |---------|-----------|-----------|-----------|----------------------|
-| Full | *Contoh: ✅ CNN* | *Contoh: ✅ Temporal features* | *Contoh: ✅ Z-score norm* | *Baseline penuh* |
-| – A | ❌ (ganti RF) | ✅ | ✅ | |
-| – B | ✅ | ❌ (tanpa temporal) | ✅ | |
-| – C | ✅ | ✅ | ❌ (tanpa normalisasi) | |
+| Full | ✅ Monitoring proses Linux | ✅ Monitoring memori Linux |✅ GTmetrix & curl testing | Data performa lengkap dan stabil |
+| – A | ❌ Tanpa monitoring proses | ✅ | ✅ | Analisis CPU dan proses menjadi tidak lengkap|
+| – B | ✅ |❌ Tanpa monitoring memori | ✅ |Pengaruh penggunaan RAM tidak dapat dianalisis |
+| – C | ✅ | ✅ | ❌ Tanpa GTmetrix/curl| Tidak ada data performa website eksternal|
 
-**Komponen mana yang diprediksi paling berkontribusi?** _____
+**Komponen mana yang diprediksi paling berkontribusi?** Komponen C (GTmetrix dan curl testing)
 **Mengapa?**
-> ___________________________________________________
+> Karena komponen ini secara langsung menghasilkan data performa website seperti response time, loading speed, dan performance score yang menjadi fokus utama penelitian.
 
 ---
 
@@ -146,5 +147,6 @@ Jika sistem memiliki 3 komponen utama, rencanakan ablation study.
 > Apa risiko jika sistem dibangun seperti produk (monolitik, fitur lengkap) lalu baru dilakukan eksperimen? Mengapa arsitektur modular penting untuk riset?
 
 **Jawaban:**
-> ___________________________________________________
-> ___________________________________________________
+> Jika sistem dibangun seperti produk monolitik dengan banyak fitur tambahan, maka eksperimen akan sulit dilakukan karena variabel penelitian bercampur dengan fitur lain yang tidak relevan. Hal ini meningkatkan noise dan menyulitkan peneliti menentukan faktor yang benar-benar memengaruhi hasil penelitian.
+
+Arsitektur modular penting dalam riset karena memungkinkan setiap variabel dipisahkan dan diuji secara independen. Dengan modularitas, peneliti dapat mengubah satu variabel tanpa memengaruhi komponen lain sehingga eksperimen menjadi lebih terkontrol, terukur, dan mudah direproduksi.
