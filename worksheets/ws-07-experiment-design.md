@@ -106,13 +106,13 @@ Statistical Plan:
 
 Susun desain eksperimen berdasarkan RQ, variabel, dan sistem dari WS-04 sampai WS-06.
 
-**RQ:** __________________________________________________
-**Tipe eksperimen:** [ ] Comparison / [ ] Ablation / [ ] Parameter
+**RQ:** Apakah manajemen proses dan struktur memori Linux Ubuntu 22.04 LTS menghasilkan performa website sistem informasi akademik yang lebih efisien berdasarkan response time, penggunaan CPU/memori, dan GTmetrix performance score?
+**Tipe eksperimen:** [ya] Comparison / [ ] Ablation / [ ] Parameter
 
 | Kondisi | Deskripsi | IV Value | CV Settings |
 |---------|-----------|----------|-------------|
-| Control | *Contoh: RF baseline dari literatur* | *RF* | *Dataset X, 80:20 split, seed 42* |
-| Treatment | | | |
+| Control | Pengujian website tanpa optimasi monitoring detail |Monitoring dasar sistem Linux| Ubuntu 22.04, RAM 4GB, CPU dual-core, koneksi internet tetap|
+| Treatment |Pengujian website dengan monitoring proses dan memori lengkap menggunakan htop, vmstat, curl, dan GTmetrix |Monitoring proses + struktur memori Linux |Ubuntu 22.04, RAM 4GB, CPU dual-core, koneksi internet tetap |
 
 ---
 
@@ -122,14 +122,14 @@ Evaluasi apakah desain eksperimen di Latihan 1 sudah fair.
 
 | Kriteria | Status | Detail |
 |----------|--------|--------|
-| Dataset identik | *Contoh: ✅ — sama-sama pakai CIC-MalMem-2022* | |
-| Preprocessing setara | | |
-| Tuning effort setara | | |
-| Environment identik | | |
-| Metrik evaluasi sama | | |
+| Dataset identik | ✅ | Menggunakan website akademik yang sama|
+| Preprocessing setara |✅ |Tidak ada perubahan data atau konfigurasi website |
+| Tuning effort setara | ✅| Semua pengujian menggunakan konfigurasi Linux yang sama|
+| Environment identik | ✅|Hardware, OS, dan jaringan dibuat sama |
+| Metrik evaluasi sama | ✅|Semua kondisi menggunakan response time, CPU usage, memory usage, dan GTmetrix score |
 
-**Ada yang tidak fair?** [ ] Ya / [ ] Tidak
-> Jika ya, bagaimana cara memperbaikinya? ________________
+**Ada yang tidak fair?** [ ] Ya / [ tidak] Tidak
+> Jika ya, bagaimana cara memperbaikinya? Tidak perlu perbaikan karena seluruh kondisi eksperimen sudah dijaga tetap identik.
 
 ---
 
@@ -139,14 +139,14 @@ Identifikasi ancaman validitas untuk desain eksperimen ini.
 
 | Threat Type | Ancaman Spesifik | Mitigasi |
 |-------------|-----------------|----------|
-| Internal | *Contoh: Data leakage antara train-test* | *Contoh: Gunakan stratified split, validasi tidak ada overlap* |
-| External | | |
-| Construct | | |
-| Conclusion | | |
+| Internal | Aktivitas proses background Linux dapat memengaruhi hasil performa | Menutup aplikasi yang tidak diperlukan selama pengujian |
+| External | Hasil eksperimen hanya menggunakan satu website akademik| Menambah objek website lain pada penelitian lanjutan|
+| Construct |GTmetrix score mungkin tidak sepenuhnya merepresentasikan pengalaman pengguna |Menggunakan metrik tambahan seperti response time dan LCP |
+| Conclusion |Jumlah pengujian terlalu sedikit dapat menghasilkan kesimpulan yang lemah | Melakukan pengujian berulang minimal 3 kali|
 
-**Ancaman mana yang paling sulit dimitigasi?** _____________
+**Ancaman mana yang paling sulit dimitigasi?** External validity
 **Mengapa?**
-> ___________________________________________________
+Karena hasil penelitian hanya menggunakan satu sistem informasi akademik sehingga generalisasi hasil ke website lain masih terbatas.
 
 ---
 
@@ -155,6 +155,11 @@ Identifikasi ancaman validitas untuk desain eksperimen ini.
 > Sebuah paper melaporkan "metode kami mengalahkan semua baseline." Apa 3 pertanyaan pertama yang harus diajukan untuk mengevaluasi klaim ini?
 
 **Jawaban:**
-1. ___________________________________________________
-2. ___________________________________________________
-3. ___________________________________________________
+Jika sebuah paper mengklaim “metode kami mengalahkan semua baseline”, maka tiga pertanyaan pertama yang harus diajukan adalah:
+
+1. Apakah semua baseline diuji dengan kondisi yang benar-benar sama?
+- Dataset, environment, preprocessing, dan metrik harus identik.
+2. Apakah baseline yang dipilih representatif dan relevan?
+- Jangan sampai menggunakan baseline lama atau lemah hanya agar metode baru terlihat lebih baik.
+3. Apakah hasil perbedaannya signifikan secara statistik?
+- Harus ada bukti statistik seperti p-value atau effect size, bukan hanya selisih angka kecil.
