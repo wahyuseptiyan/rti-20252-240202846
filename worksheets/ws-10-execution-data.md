@@ -96,15 +96,15 @@ Susun execution plan untuk eksperimen Anda. Tentukan skenario, jumlah run, dan s
 
 | Run # | Skenario | Seed | Parameter Kunci | Status |
 |-------|----------|------|----------------|--------|
-| *1* | *Contoh: BERT-base, DS-1* | *42* | *lr=2e-5, epoch=10* | *Planned* |
-| *2* | *BERT-base, DS-1* | *123* | *lr=2e-5, epoch=10* | *Planned* |
-| 3 | | | | |
-| 4 | | | | |
-| 5 | | | | |
+| 1 | Cek kecepatan respon web SIAKAD | Gak pakai (Locked) | URL Login, jeda tiap 2 menit | Beres dijalankan |
+| 2 | Cek kecepatan respon web SIAKAD | Gak pakai (Locked) | URL Login, jeda tiap 2 menit | Beres dijalankan |
+| 3 | Cek kecepatan respon web SIAKAD | Gak pakai (Locked) | URL Login, jeda tiap 2 menit | Beres dijalankan |
+| 4 | Cek kecepatan respon web SIAKAD | Gak pakai (Locked) | URL Login, jeda tiap 2 menit | Beres dijalankan |
+| 5 | Cek kecepatan respon web SIAKAD | Gak pakai (Locked) | URL Login, jeda tiap 2 menit | Beres dijalankan |
 
-**Total skenario:** ____
-**Run per skenario:** ____
-**Total run keseluruhan:** ____
+**Total skenario:** 1 skenario pengujian utama buat cari performa awal (baseline).
+**Run per skenario:** Diulang 5 kali run biar adil.
+**Total run keseluruhan:** 5 kali uji coba.
 
 ---
 
@@ -115,25 +115,25 @@ Desain format data log untuk eksperimen Anda. Tentukan field apa saja yang akan 
 **Identitas:**
 | Field | Contoh |
 |-------|--------|
-| Run ID | *run-001* |
-| Timestamp | *2025-03-15T10:30:00* |
-| | |
+| Run ID | Mulai dari `run-001` sampai `run-005` |
+| Timestamp | `2026-06-23T23:00:00Z` (Waktu pas ngetik di terminal) |
+| Operator | Wahyu Septiyan |
 
 **Konfigurasi:**
 | Field | Contoh |
 |-------|--------|
-| Seed | *42* |
-| Code version | *commit abc1234* |
-| | |
+| Seed | Dikunci (Nggak pakai pengacakan) |
+| Code version | Alamat web target: https://siakad.target-kampus.ac.id |
+| Target OS | Linux Ubuntu 22.04 LTS yang jalan di VirtualBox |
 
 **Hasil:**
 | Metrik | Tipe Data | Range Valid |
 |--------|----------|-------------|
-| *Contoh: Accuracy* | *float* | *0.0 – 1.0* |
-| | | |
-| | | |
+| Waktu Respon (`curl`) | float (angka desimal) | 0.00 – 10.00 detik |
+| Skor Performa GTmetrix | integer (angka bulat) | 0 – 100% |
+| Beban CPU (`htop`) | float (angka persen) | 0.0 – 100.0% |
 
-**Format output:** [ ] CSV / [ ] JSON / [ ] Database / [ ] Lainnya: ____
+**Format output:** [x] CSV / [ ] JSON / [ ] Database / [ ] Lainnya: ____
 
 ---
 
@@ -141,12 +141,16 @@ Desain format data log untuk eksperimen Anda. Tentukan field apa saja yang akan 
 
 Rencanakan bagaimana menangani anomali. Untuk setiap jenis, tentukan langkah yang diambil.
 
+## Latihan 3 — Anomaly Protocol
+
+Rencanakan bagaimana menangani anomali. Untuk setiap jenis, tentukan langkah yang diambil.
+
 | Jenis Anomali | Contoh | Tindakan |
 |---------------|--------|----------|
-| Run gagal (crash) | *Contoh: OOM pada batch_size=64* | *Contoh: Dokumentasi, re-run batch_size=32, catat perubahan* |
-| Hasil ekstrem | | |
-| Waktu eksekusi anomali | | |
-| Inkonsistensi dengan run lain | | |
+| Run gagal (crash) | Koneksi internet tiba-tiba putus pas perintah `curl` lagi jalan | Ubah status run jadi *Failed*, cek dulu Wi-Fi laptop Lenovo-nya, lalu bikin Run ID baru buat tes ulang tanpa menghapus data yang gagal. |
+| Hasil ekstrem | Angka response time tiba-tiba melonjak sampai `15.0 detik` | Cek apakah Windows di laptop lagi diam-diam update atau server SIAKAD-nya yang emang lagi down. Tandai datanya sebagai *Outlier* (jangan dihapus) biar tetap jujur. |
+| Waktu eksekusi anomali | Jeda pengujian meleset jadi 15 menit gara-gara ditinggal bikin kopi | Biarkan data tetap masuk ke log pengujian, tapi kasih keterangan tambahan *Protoplan Delay* biar ketahuan kenapa jedanya kelamaan. |
+| Inkonsistensi dengan run lain | Skor performa di GTmetrix mendadak drop jauh di run ke-4 dan ke-5 | Cek apakah laptop mulai panas (*thermal throttling*) yang bikin performa CPU AMD Ryzen-nya turun. Catat kondisi suhunya, dan jadikan itu bahan analisis tambahan. |
 
 **Prinsip:** Detect → Investigate → Document → Decide
 
@@ -157,6 +161,7 @@ Rencanakan bagaimana menangani anomali. Untuk setiap jenis, tentukan langkah yan
 > Pernahkah Anda melaporkan hasil riset/tugas dari single run? Apa risikonya? Bagaimana multiple run mengubah kepercayaan terhadap hasil?
 
 **Pengalaman sebelumnya:**
-> ___________________________________________________
+> Jujur, kalau pas ngerjain tugas kuliah atau praktikum biasa, saya sering banget cuma ngetes program sekali (*single run*) saja. Begitu programnya jalan dan keluar angkanya, ya sudah langsung saya ambil dan kumpulin ke dosen. Risikonya baru terasa sekarang, datanya bisa jadi bias banget. Kalau pas kebetulan pas diklik internetnya lagi lemot, nanti kesimpulannya jadi ikutan salah, padahal aslinya sistemnya nggak sejelek itu.
+
 **Yang akan dilakukan berbeda:**
-> ___________________________________________________
+> Ke depannya, saya bakal pakai cara *multiple runs* (diulang minimal 5 kali) kayak di tugas ini. Selain itu, semua kondisi lingkungan laptop dan server juga wajib dicatat di log data yang rapi. Dengan cara diulang-ulang begini, kita bisa tahu nilai rata-rata yang sebenarnya dan kelihatan juga internetnya lagi stabil atau naik-turun. Hasil risetnya pun jadi lebih kuat, meyakinkan, dan nggak bisa didebat sama dosen.
