@@ -100,15 +100,12 @@ Verifikasi apakah semua data yang direncanakan sudah terkumpul.
 
 | Skenario | Run Direncanakan | Run Tercatat | Missing | Alasan |
 |----------|-----------------|-------------|---------|--------|
-| *Contoh: BERT, DS-1* | *10* | *10* | *0* | *—* |
-| *LSTM, DS-3* | *10* | *8* | *2* | *OOM pada run 7 & 9* |
-| | | | | |
-| | | | | |
+| Uji Response Time Web SIAKAD | 5 | 5 | 0 | Aman, semua data terekam lengkap |
 
-**Total expected:** ____ | **Total actual:** ____ | **Missing:** ____
+**Total expected:** 5 | **Total actual:** 5 | **Missing:** 0
 
 **Keputusan untuk data missing:**
-> ___________________________________________________
+> Karena datanya sudah masuk semua 100% alias tidak ada yang hilang atau nge-crash di jalan, kita bisa langsung gas lanjut ke tahap pemeriksaan anomali data.
 
 ---
 
@@ -116,27 +113,27 @@ Verifikasi apakah semua data yang direncanakan sudah terkumpul.
 
 Periksa data Anda untuk anomali. Gunakan metode IQR atau z-score.
 
-**Dataset sampel (atau data Anda sendiri):**
+**Dataset sampel (Data Fiktif Response Time):**
 
-| Run | Accuracy (%) |
+| Run | Response Time (Detik) |
 |-----|-------------|
-| 1 | *91.2* |
-| 2 | *90.8* |
-| 3 | *91.5* |
-| 4 | *78.3* |
-| 5 | *91.0* |
+| 1   | 2.15        |
+| 2   | 2.20        |
+| 3   | 2.12        |
+| 4   | 2.18        |
+| 5   | 2.14        |
 
-**Deteksi outlier:**
-- Q1 = ____ | Q3 = ____ | IQR = ____
-- Batas bawah (Q1 - 1.5×IQR) = ____
-- Batas atas (Q3 + 1.5×IQR) = ____
-- Outlier terdeteksi: ____
+**Deteksi outlier (diurutkan dari kecil ke gede: 2.12, 2.14, 2.15, 2.18, 2.20):**
+- Q1 (Kuartil Bawah) = 2.135 | Q3 (Kuartil Atas) = 2.19 | IQR = 0.055
+- Batas bawah (Q1 - 1.5 × IQR) = 2.0525
+- Batas atas (Q3 + 1.5 × IQR) = 2.2725
+- Outlier terdeteksi: Gak ada (Semua data fiktif kita berada di dalam batas aman)
 
 **Investigasi (untuk setiap outlier):**
 
 | Outlier | Nilai | Kemungkinan Penyebab | Keputusan |
 |---------|-------|---------------------|-----------|
-| *Run 4* | *78.3* | *Contoh: thermal throttling setelah 3 run berturut* | *Re-run dengan cooling interval* |
+| - | - | Gak ada data yang aneh atau lompat kejauhan | Data fiktif ini bersih dan bisa lanjut dipakai |
 
 ---
 
@@ -144,12 +141,12 @@ Periksa data Anda untuk anomali. Gunakan metode IQR atau z-score.
 
 Buat laporan validasi ringkas untuk dataset eksperimen Anda.
 
-**1. Completeness:** ____% data terkumpul
-**2. Format:** [ ] Konsisten / [ ] Ada inkonsistensi: ____
-**3. Range check (anomali):** ____
-**4. Logic check:** [ ] Parameter sesuai plan / [ ] Ada ketidaksesuaian: ____
+**1. Completeness:** 100% data berhasil terkumpul tanpa ada yang kurang.
+**2. Format:** [x] Konsisten / [ ] Ada inkonsistensi: ____
+**3. Range check (anomali):** Gak ditemukan anomali sama sekali, semua angka response time masuk akal di rentang 2.12 - 2.20 detik.
+**4. Logic check:** [x] Parameter sesuai plan / [ ] Ada ketidaksesuaian: ____
 
-**Kesimpulan:** [ ] Data siap analisis / [ ] Perlu tindakan: ____
+**Kesimpulan:** [x] Data siap analisis / [ ] Perlu tindakan: ____
 
 ---
 
@@ -157,5 +154,7 @@ Buat laporan validasi ringkas untuk dataset eksperimen Anda.
 
 > Apa perbedaan antara "data yang benar" dan "data yang dipercaya"? Mengapa proses validasi formal diperlukan meskipun data dikumpulkan secara otomatis?
 
-> ___________________________________________________
-> ___________________________________________________
+**Jawaban Saya:**
+> Bedanya begini: "data yang benar" itu asal angkanya keluar otomatis dari komputer, ya kita anggap benar karena bersumber dari sistem. Tapi belum tentu data itu bisa "dipercaya" untuk riset. Bisa saja komputer kita lagi nge-bug, atau internet pas run ke-4 tiba-tiba drop tanpa kita sadari. 
+
+> Makanya, validasi formal (seperti cek kelengkapan dan rumus IQR) itu wajib banget dilakukan. Biarpun semua data tercatat otomatis, kita harus tetap menyaringnya secara manual. Tujuannya agar kita yakin kalau data fiktif maupun data asli yang kita pegang ini emang sehat, jujur, terbebas dari error sistem, dan layak buat dipresentasikan ke dosen tanpa bikin malu.
